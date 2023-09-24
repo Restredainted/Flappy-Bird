@@ -15,7 +15,7 @@ public class playerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello World Finally Connected. :')");
+        Debug.Log("Hello World Finally Connected. :') ");
         
     }
 
