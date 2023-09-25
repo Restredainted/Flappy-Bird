@@ -3583,9 +3583,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 28
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 5
+    m_MaxSize: 28
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4861,7 +4861,6 @@ GameObject:
   - component: {fileID: 618107790}
   - component: {fileID: 618107789}
   - component: {fileID: 618107788}
-  - component: {fileID: 618107787}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4869,19 +4868,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &618107787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618107786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f902316aee9aa49b7bb9ed115a6931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreText: {fileID: 0}
 --- !u!114 &618107788
 MonoBehaviour:
   m_ObjectHideFlags: 0

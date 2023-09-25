@@ -9,16 +9,17 @@ using UnityEngine.UI;
 public class playerControl : MonoBehaviour
 {
     float speed = 10f;
+    //code for Health Bar
     public float maxHealth = 100f; 
     public float health = 100f;
     public Image healthBar;
-    private float score = 0;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello World Finally Connected. :') ");
+        Debug.Log("Hello World.");
         
     }
 
@@ -42,7 +43,7 @@ public class playerControl : MonoBehaviour
             Heal(20);
         }
         
-        displayScore();
+        
     }
     
     public void TakeDamage(float damage) {
@@ -57,10 +58,11 @@ public class playerControl : MonoBehaviour
         healthBar.fillAmount = health / 100f;
     }
 
+    /* Score Contained in UIManager
     public string displayScore() {
         return score.ToString();
     }
-
+    */
 
 
 
