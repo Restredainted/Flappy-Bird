@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -20,5 +24,19 @@ public class Player : MonoBehaviour
             rigidbody.velocity = Vector2.up * velocity;
         }
         //For touch devices can us Input.getTouch
+
+        UIManager.addScore(1);
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("player onCollisionEnter2D");
+        Time.timeScale = 0f;
+        GameOver.GameOverMenu.SetActive(true);
+    }
+
+    void restart() {
+        
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

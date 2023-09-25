@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
-public class Ground : MonoBehaviour
+public class RepeatGround : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] private float speed;
+    private Vector3 startPos;
+    private float width;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPos = transform.position;
+        width =  6.44f;
+        //background does not tile properly. 
+        //GetComponent<SpriteRenderer>().size.x;
+        Debug.Log("GetComponent<SpriteRenderer>().size.x " + GetComponent<SpriteRenderer>().size.x);
     }
 
     // Update is called once per frame
@@ -23,8 +32,10 @@ public class Ground : MonoBehaviour
         //Debug.Log(transform.position.x);
 
 
-        if(transform.position.x <= -2) {
-            
+        if(transform.position.x <= startPos.x - width)  {
+            transform.position = startPos;
         }
+
+        
     }
 }
