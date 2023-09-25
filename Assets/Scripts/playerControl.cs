@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class playerControl : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class playerControl : MonoBehaviour
     public float maxHealth = 100f; 
     public float health = 100f;
     public Image healthBar;
+    private float score = 0;
 
 
     // Start is called before the first frame update
@@ -22,6 +25,7 @@ public class playerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //UIManager.addScore();
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
         transform.position += move * speed * Time.deltaTime;
@@ -37,6 +41,8 @@ public class playerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab)) {
             Heal(20);
         }
+        
+        displayScore();
     }
     
     public void TakeDamage(float damage) {
@@ -49,6 +55,10 @@ public class playerControl : MonoBehaviour
         health = Mathf.Clamp(health,0,100);
 
         healthBar.fillAmount = health / 100f;
+    }
+
+    public string displayScore() {
+        return score.ToString();
     }
 
 
