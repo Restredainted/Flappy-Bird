@@ -16,9 +16,7 @@ public class RepeatGround : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        width =  6.44f;
-        //background does not tile properly. 
-        //GetComponent<SpriteRenderer>().size.x;
+        width =  GetComponent<SpriteRenderer>().size.x;
         Debug.Log("GetComponent<SpriteRenderer>().size.x " + GetComponent<SpriteRenderer>().size.x);
     }
 

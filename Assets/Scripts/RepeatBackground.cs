@@ -16,7 +16,7 @@ public class RepeatBackground : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        bg_Width =  GetComponent<SpriteRenderer>().size.x;//6.44f;
+        bg_Width = 6.44f;
         //background does not tile properly. 
         //GetComponent<SpriteRenderer>().size.x;
         Debug.Log("GetComponent<SpriteRenderer>().size.x " + GetComponent<SpriteRenderer>().size.x);
