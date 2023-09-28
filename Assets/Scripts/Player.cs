@@ -9,11 +9,13 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField]private float velocity = 2.4f;
-    private Rigidbody2D rigidbody;
+    public SC_Game_Manager gameManager;
+    public bool isDead = false;
+    private Rigidbody2D rbody;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rbody = GetComponent<Rigidbody2D>();
         
     }
 
@@ -21,22 +23,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            rigidbody.velocity = Vector2.up * velocity;
+            rbody.velocity = Vector2.up * velocity;
         }
         //For touch devices can us Input.getTouch
+
 
         UIManager.addScore(1);
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
+    void OnCollisionEnter2D(Collision2D other) {
         Debug.Log("player onCollisionEnter2D");
-        Time.timeScale = 0f;
-        GameOver.GameOverMenu.SetActive(true);
+        isDead = true;
+        gameManager.gameOver();
     }
 
-    void restart() {
-        
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    
 }
